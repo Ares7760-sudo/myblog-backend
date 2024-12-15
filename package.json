@@ -1,0 +1,27 @@
+{
+  "name": "myblog-backend",
+  "version": "1.0.0",
+  "description": "backend for my blog app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ares7760-sudo/myblog-backend.git"
+  },
+  "author": "Ares7760-sudo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ares7760-sudo/myblog-backend/issues"
+  },
+  "homepage": "https://github.com/Ares7760-sudo/myblog-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}
