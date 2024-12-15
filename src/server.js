@@ -6,7 +6,7 @@ const apiRoutes = require('./routes/api')
 const cors = require('cors')
 
 const app = express()
-//const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
 // config req.body
 app.use(express.json())
@@ -25,7 +25,7 @@ configViewEngine(app)
 app.use('/', webRoutes)
 app.use('/api', apiRoutes)
 
-/*
+
 app.listen(port, () => {
     console.log(`Blog app listening on port ${port}`);
-})*/
+})
