@@ -12,10 +12,10 @@ const getAllBlog = (req, res) => {
   );
 }
 
-const createNewBlog = async (req, res) => {
+const createNewBlog = (req, res) => {
     let { title, author, content } = req.body
 
-    await connection.query(
+    connection.query(
         `insert into blogs (title, author, content) 
         values (?, ?, ?)`,
         [title, author, content],
@@ -37,24 +37,23 @@ const updateBlog = async (req, res) => {
         }
 }
 
-const getBlogById = async (req, res) => {
-    const blogId = await req.params.id
+const getBlogById = (req, res) => {
+    const blogId = req.params.id
     
     connection.query(`select * from blogs where id = ?`, 
         [blogId],
         function (err, results) {
             let blog = results && results.length > 0 ? results[0] : {}
-            console.log("gt here", JSON.stringify(blog))
             res.send(JSON.stringify(blog))
         }
     );
 }
 
 const deleteBlogById = async (req, res) => {
-    const blogId = req.params.id
+    const blogId = await req.params.id
 
-    await connection.query(
-        `delete * from blogs where id = ?`,
+    connection.query(
+        `delete from blogs where id = ?`,
         [blogId],
         function (err, results) {
             res.send(results)
